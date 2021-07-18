@@ -1,0 +1,8 @@
+.home-container {
+  height: calc(100% - var(--header-height) - var(--chart-selector-height));
+}
+
+.chart-selector {
+  display: flex;
+  justify-content: center;
+}

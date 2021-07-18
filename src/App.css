@@ -1,0 +1,7 @@
+.app-container {
+  height: inherit;
+}
+
+.container {
+  height: calc(100% - var(--header-height));
+}
