@@ -28,7 +28,7 @@ const AppLineChart = ({
   <ResponsiveContainer width='100%' height='100%'>
     <LineChart
       data={data}
-      margin={{ top: 40, bottom: 40, right: 20, left: 25 }}
+      margin={{ top: 40, bottom: 40, right: 20, left: 35 }}
     >
       <XAxis
         dataKey={xKey}
@@ -54,7 +54,7 @@ const AppLineChart = ({
           value={Strings.CHART.YAXIS_LABEL}
           stroke={axesColor}
           angle={-90}
-          offset={-15}
+          offset={-25}
         />
       </YAxis>
       <Tooltip

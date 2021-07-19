@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ThemeProvider, Paper } from '@material-ui/core';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Pages
 import ROUTES from './pages';
@@ -19,9 +20,13 @@ import { selectTheme } from './store/selectors/ipc';
 // Styles
 import { darkTheme, lightTheme } from './styles/theme';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     height: '100vh',
+    padding: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1),
+    }
   },
 }));
 
@@ -34,11 +39,11 @@ function App() {
 
   useEffect(() => {
     dispatch(checkUserSession());
-    // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={appliedTheme}>
+      <CssBaseline />
       {loading ? (
         <Spinner fullScreen />
       ) : (

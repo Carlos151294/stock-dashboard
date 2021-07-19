@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 import { selectUser } from '../../store/selectors/auth';
 import { logout } from '../../store/actions/auth';
-import ROUTES from '../../pages';
 import Strings from '../../shared/constants/strings';
+import ROUTES from '../../pages';
 import useStyles from './styles.js';
 
 const Header = () => {
@@ -19,27 +21,31 @@ const Header = () => {
     <header className={classes.headerContainer}>
       {user && (
         <Link className={`${classes.brand} ${classes.link}`} to={ROUTES.HOME}>
-          <TrendingUpIcon />
-          <div className={`${classes.brandname} ${classes.navOption}`}>{Strings.HEADER.BRAND_NAME}</div>
+          <Box fontSize='h2.fontSize' className={classes.dflex}>
+            <TrendingUpIcon />
+          </Box>
+          <Typography variant='h3' className={classes.navOption}>
+            {Strings.HEADER.BRAND_NAME}
+          </Typography>
         </Link>
       )}
       <div className={classes.navOptions}>
         <div className={classes.navOption}>
           <Link className={classes.link} to={ROUTES.CONTACT}>
-            {Strings.HEADER.CONTACT}
+            <Typography variant='h5'>{Strings.HEADER.CONTACT}</Typography>
           </Link>
         </div>
         {!user && (
           <div className={classes.navOption}>
             <Link className={classes.link} to={ROUTES.LOGIN}>
-              {Strings.HEADER.LOGIN}
+              <Typography variant='h5'>{Strings.HEADER.LOGIN}</Typography>
             </Link>
           </div>
         )}
         {user && (
           <div className={classes.navOption}>
             <div className={classes.cursor} onClick={handleLogout}>
-              {Strings.HEADER.LOGOUT}
+              <Typography variant='h5'>{Strings.HEADER.LOGOUT}</Typography>
             </div>
           </div>
         )}

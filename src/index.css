@@ -1,22 +1,4 @@
 :root {
-  /* Components */
   --header-height: 60px;
   --chart-toolbar-height: 48px;
 }
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Open Sans Condensed', sans-serif;
-	/* padding: 20px 60px; */
-	margin: 0;
-}
-
-
-/* @media (max-width: 600px) {
-  body {
-    padding: 20px 10px;
-  }
-} */

@@ -28,7 +28,7 @@ const AppAreaChart = ({
   <ResponsiveContainer width='100%' height='100%'>
     <AreaChart
       data={data}
-      margin={{ top: 40, bottom: 40, right: 20, left: 25 }}
+      margin={{ top: 40, bottom: 40, right: 20, left: 35 }}
     >
       <defs>
         <linearGradient id='MyGradient' x1='0' y1='0' x2='0' y2='1'>
@@ -60,7 +60,7 @@ const AppAreaChart = ({
           value={Strings.CHART.YAXIS_LABEL}
           stroke={axesColor}
           angle={-90}
-          offset={-15}
+          offset={-25}
         />
       </YAxis>
       <Tooltip

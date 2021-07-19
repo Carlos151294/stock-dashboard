@@ -26,9 +26,6 @@ export default makeStyles((theme) => ({
     height: '40px',
     borderRadius: '20px',
   },
-  brandname: {
-    fontSize: '1.2rem',
-  },
   navOption: {
     height: '100%',
     padding: '10px 15px',
@@ -36,4 +33,7 @@ export default makeStyles((theme) => ({
   cursor: {
     cursor: 'pointer',
   },
+  dflex: {
+    display: 'flex',
+  }
 }));

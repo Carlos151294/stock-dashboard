@@ -17,10 +17,9 @@ import Spinner from '../../components/Spinner';
 import AppLineChart from '../../components/LineChart';
 import AppAreaChart from '../../components/AreaChart';
 import AreaChartIcon from '../../components/Icons/AreaChartIcon';
-import { history, history2, history3 } from '../../services/ipc';
 import { CHART } from '../../shared/constants';
-import useStyles from './styles.js';
 import Strings from '../../shared/constants/strings';
+import useStyles from './styles.js';
 
 const Toolbar = ({ selectedChart, onChartSelected }) => {
   const classes = useStyles();
@@ -39,10 +38,10 @@ const Toolbar = ({ selectedChart, onChartSelected }) => {
           aria-label='chart'
         >
           <ToggleButton value={CHART.LINE} aria-label={CHART.LINE}>
-            <ShowChartIcon />
+            <ShowChartIcon className={classes.iconSize} />
           </ToggleButton>
           <ToggleButton value={CHART.AREA} aria-label={CHART.AREA}>
-            <AreaChartIcon />
+            <AreaChartIcon className={classes.iconSize} />
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
@@ -87,7 +86,7 @@ const Chart = ({
     case CHART.AREA:
       return (
         <AppAreaChart
-          data={history}
+          data={data}
           xKey='date'
           yKey='price'
           xAxisInterval={interval}
@@ -116,7 +115,7 @@ const HomePage = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { loading } = useSelector(selectIpc);
-  // const history = useSelector(selectIpcHistory);
+  const history = useSelector(selectIpcHistory);
   const [selectedChart, setSelectedChart] = useState(CHART.LINE);
   const interval = Math.trunc(history.length / CHART.NUMBER_OF_SAMPLES);
 

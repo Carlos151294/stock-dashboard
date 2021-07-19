@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   fullHeight: {
-    height: '100%',
+    height: '100vh',
   },
   normalHeight: {
     height: 'calc(100% - var(--header-height))',

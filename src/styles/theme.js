@@ -1,3 +1,22 @@
+const typography = {
+  htmlFontSize: 16,
+  h2: {
+    fontSize: '1.5rem',
+  },
+  h3: {
+    fontSize: '1.2rem',
+  },
+  h5: {
+    fontSize: '1rem',
+  },
+  body1: {
+    fontSize: '0.9rem',
+  },
+  body2: {
+    fontSize: '0.75rem',
+  }
+};
+
 export const lightTheme = {
   palette: {
     type: 'light',
@@ -9,6 +28,7 @@ export const lightTheme = {
       primary: '#000000',
     },
   },
+  typography,
 };
 
 export const darkTheme = {
@@ -22,4 +42,5 @@ export const darkTheme = {
       primary: '#ffffff',
     },
   },
+  typography,
 };
