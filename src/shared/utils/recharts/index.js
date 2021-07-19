@@ -1,4 +1,4 @@
-import { getUTCTime, getUTCFormatted, MXformatter } from "../date";
+import { getUTCTime, getUTCFormatted, MXformatter } from '../date';
 
 export const handleXAxisTickFormat = (value) => {
   return getUTCTime(value);

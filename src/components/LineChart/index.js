@@ -6,9 +6,6 @@ import {
   Tooltip,
   Label,
   ResponsiveContainer,
-  Brush, 
-  AreaChart,
-  Area
 } from 'recharts';
 
 import {
@@ -17,8 +14,17 @@ import {
   handleXAxisTickFormat,
   handleYAxisTickFormat,
 } from '../../shared/utils/recharts';
+import Strings from '../../shared/constants/strings';
 
-const AppLineChart = ({ data, xKey, yKey, xAxisInterval, color }) => (
+const AppLineChart = ({
+  data,
+  xKey,
+  yKey,
+  xAxisInterval,
+  color,
+  axesColor,
+  tooltipColor,
+}) => (
   <ResponsiveContainer width='100%' height='100%'>
     <LineChart
       data={data}
@@ -29,36 +35,37 @@ const AppLineChart = ({ data, xKey, yKey, xAxisInterval, color }) => (
         tickMargin={15}
         tickFormatter={handleXAxisTickFormat}
         interval={xAxisInterval}
+        stroke={axesColor}
       >
-        <Label position='bottom' value='Time' offset={20} />
+        <Label
+          position='bottom'
+          value={Strings.CHART.XAXIS_LABEL}
+          stroke={axesColor}
+          offset={20}
+        />
       </XAxis>
-      <YAxis domain={['auto', 'auto']} tickFormatter={handleYAxisTickFormat}>
-        <Label position='insideLeft' value='Price' angle={-90} offset={-15} />
+      <YAxis
+        domain={['auto', 'auto']}
+        tickFormatter={handleYAxisTickFormat}
+        stroke={axesColor}
+      >
+        <Label
+          position='insideLeft'
+          value={Strings.CHART.YAXIS_LABEL}
+          stroke={axesColor}
+          angle={-90}
+          offset={-15}
+        />
       </YAxis>
       <Tooltip
         labelFormatter={handleTooltipLabelFormat}
         formatter={handleTooltipFormat}
-        wrapperStyle={{
-          borderColor: 'white',
-          boxShadow: '2px 2px 3px 0px rgb(204, 204, 204)',
-        }}
-        contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
-        labelStyle={{ fontWeight: 'bold', color: '#666666' }}
+        contentStyle={{ backgroundColor: `${axesColor}` }}
+        cursor={{ stroke: `${axesColor}` }}
+        labelStyle={{ fontWeight: 'bold', color: `${tooltipColor}` }}
+        itemStyle={{ fontWeight: 'bold', color: `${tooltipColor}` }}
       />
       <Line dataKey={yKey} stroke={color} strokeWidth={2} dot={false} />
-      {
-        // <Brush dataKey={xKey} startIndex={data.length - 40}>
-        //   <AreaChart>
-        //     <YAxis hide domain={['auto', 'auto']} />
-        //     <Area
-        //       dataKey={yKey}
-        //       stroke='#ff7300'
-        //       fill='#ff7300'
-        //       dot={false}
-        //     />
-        //   </AreaChart>
-        // </Brush>
-      }
     </LineChart>
   </ResponsiveContainer>
 );

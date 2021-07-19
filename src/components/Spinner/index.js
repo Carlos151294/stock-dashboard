@@ -1,9 +1,17 @@
-import './styles.css';
+import useStyles from './styles';
 
 const Spinner = ({ fullScreen }) => {
+  const classes = useStyles();
+
   return (
-    <div className={fullScreen ? 'spinner-overlay full-height' : 'spinner-overlay normal-height'}>
-      <div className="spinner"></div>
+    <div
+      className={
+        fullScreen
+          ? `${classes.spinnerOverlay} ${classes.fullHeight}`
+          : `${classes.spinnerOverlay} ${classes.normalHeight}`
+      }
+    >
+      <div className={classes.spinner}></div>
     </div>
   );
 };

@@ -13,3 +13,7 @@ export const fetchIpcHistoryError = (error) => ({
   type: IPCActionTypes.FETCH_HISTORY_ERROR,
   payload: error,
 });
+
+export const toggleTheme = () => ({
+  type: IPCActionTypes.TOGGLE_THEME,
+});

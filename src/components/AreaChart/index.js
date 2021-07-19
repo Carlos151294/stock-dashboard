@@ -14,8 +14,17 @@ import {
   handleXAxisTickFormat,
   handleYAxisTickFormat,
 } from '../../shared/utils/recharts';
+import Strings from '../../shared/constants/strings';
 
-const AppAreaChart = ({ data, xKey, yKey, xAxisInterval, color }) => (
+const AppAreaChart = ({
+  data,
+  xKey,
+  yKey,
+  xAxisInterval,
+  color,
+  axesColor,
+  tooltipColor,
+}) => (
   <ResponsiveContainer width='100%' height='100%'>
     <AreaChart
       data={data}
@@ -32,28 +41,41 @@ const AppAreaChart = ({ data, xKey, yKey, xAxisInterval, color }) => (
         tickMargin={15}
         tickFormatter={handleXAxisTickFormat}
         interval={xAxisInterval}
+        stroke={axesColor}
       >
-        <Label position='bottom' value='Time' offset={20} />
+        <Label
+          position='bottom'
+          value={Strings.CHART.XAXIS_LABEL}
+          stroke={axesColor}
+          offset={20}
+        />
       </XAxis>
-      <YAxis domain={['auto', 'auto']} tickFormatter={handleYAxisTickFormat}>
-        <Label position='insideLeft' value='Price' angle={-90} offset={-15} />
+      <YAxis
+        domain={['auto', 'auto']}
+        tickFormatter={handleYAxisTickFormat}
+        stroke={axesColor}
+      >
+        <Label
+          position='insideLeft'
+          value={Strings.CHART.YAXIS_LABEL}
+          stroke={axesColor}
+          angle={-90}
+          offset={-15}
+        />
       </YAxis>
       <Tooltip
         labelFormatter={handleTooltipLabelFormat}
         formatter={handleTooltipFormat}
-        wrapperStyle={{
-          borderColor: 'white',
-          boxShadow: '2px 2px 3px 0px rgb(204, 204, 204)',
-        }}
-        contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
-        labelStyle={{ fontWeight: 'bold', color: '#666666' }}
+        contentStyle={{ backgroundColor: `${axesColor}` }}
+        cursor={{ stroke: `${axesColor}` }}
+        labelStyle={{ fontWeight: 'bold', color: `${tooltipColor}` }}
+        itemStyle={{ fontWeight: 'bold', color: `${tooltipColor}` }}
       />
       <Area
         type='monotone'
         dataKey={yKey}
         stroke={color}
         strokeWidth='2'
-        fillOpacity='1'
         fill='url(#MyGradient)'
       />
     </AreaChart>

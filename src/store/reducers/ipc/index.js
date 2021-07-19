@@ -2,6 +2,7 @@ import IPCActionTypes from '../../types/ipc';
 
 const INITIAL_STATE = {
   history: [],
+  isDark: false,
   error: null,
   loading: false,
 };
@@ -25,6 +26,11 @@ const ipcReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: action.payload,
         loading: false,
+      };
+    case IPCActionTypes.TOGGLE_THEME:
+      return {
+        ...state,
+        isDark: !state.isDark,
       };
     default:
       return state;

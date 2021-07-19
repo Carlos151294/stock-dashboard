@@ -2,10 +2,11 @@ const formatter = (locale, currency, maximumFractionDigits) =>
   new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,
-    maximumFractionDigits
+    maximumFractionDigits,
   });
 
-export const MXformatter = (value, decimals = 0) => formatter('es-MX', 'MXN', decimals).format(value);
+export const MXformatter = (value, decimals = 0) =>
+  formatter('es-MX', 'MXN', decimals).format(value);
 
 export const getUTCTime = (date) => new Date(date).toUTCString().split(' ')[4];
 export const getUTCFormatted = (date) => {
