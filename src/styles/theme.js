@@ -1,9 +1,15 @@
 const typography = {
   htmlFontSize: 16,
+  h1: {
+    fontSize: '2rem',
+  },
   h2: {
-    fontSize: '1.5rem',
+    fontSize: '1.7rem',
   },
   h3: {
+    fontSize: '1.4rem',
+  },
+  h4: {
     fontSize: '1.2rem',
   },
   h5: {
