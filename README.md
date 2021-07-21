@@ -8,15 +8,19 @@ Install initial dependencies:
 
     npm install
 
-#### `npm start`
-
-Runs the app in the development mode.\
+Run the app in the development mode:
+    
+    npm start
+    
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+(Optional) If you want to launch the test runner in the interactive watch mode:
 
-### `npm deploy`
+    npm test
 
-Deploys the app to [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) which makes use of [Github Pages](https://pages.github.com/).\
+(Optional) If you want to deploy the app to [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) This script makes use of [Github Pages](https://pages.github.com/) to host the code of this project.
+
+    npm deploy
+    
+## Usage
