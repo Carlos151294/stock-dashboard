@@ -22,8 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 (Optional) If you want to deploy the app using [Github Pages](https://pages.github.com/):
 
     npm deploy
-
-Visit [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) to see the latest version of the app.
     
 ## Usage
 
