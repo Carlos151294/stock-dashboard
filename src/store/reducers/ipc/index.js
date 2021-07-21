@@ -1,4 +1,5 @@
 import IPCActionTypes from '../../types/ipc';
+import AuthActionTypes from '../../types/auth';
 
 const INITIAL_STATE = {
   history: [],
@@ -31,6 +32,11 @@ const ipcReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isDark: !state.isDark,
+      };
+    case AuthActionTypes.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isDark: false,
       };
     default:
       return state;
