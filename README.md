@@ -19,8 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
     npm test
 
-(Optional) If you want to deploy the app to [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) This script makes use of [Github Pages](https://pages.github.com/) to host the code of this project.
+(Optional) If you want to deploy the app using [Github Pages](https://pages.github.com/):
 
     npm deploy
+
+Visit [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) to see the latest version of the app.
     
 ## Usage
