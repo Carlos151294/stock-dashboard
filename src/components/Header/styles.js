@@ -35,5 +35,8 @@ export default makeStyles((theme) => ({
   },
   dflex: {
     display: 'flex',
+  },
+  inheritHeight: {
+    fontSize: 'inherit',
   }
 }));

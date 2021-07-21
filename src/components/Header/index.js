@@ -21,8 +21,8 @@ const Header = () => {
     <header className={classes.headerContainer}>
       {user && (
         <Link className={`${classes.brand} ${classes.link}`} to={ROUTES.HOME}>
-          <Box fontSize='h2.fontSize' className={classes.dflex}>
-            <TrendingUpIcon />
+          <Box fontSize='h1.fontSize' className={classes.dflex}>
+            <TrendingUpIcon className={classes.inheritHeight} />
           </Box>
           <Typography variant='h3' className={classes.navOption}>
             {Strings.HEADER.BRAND_NAME}

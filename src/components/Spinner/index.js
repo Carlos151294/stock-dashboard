@@ -10,6 +10,7 @@ const Spinner = ({ fullScreen }) => {
           ? `${classes.spinnerOverlay} ${classes.fullHeight}`
           : `${classes.spinnerOverlay} ${classes.normalHeight}`
       }
+      data-testid='spinner'
     >
       <div className={classes.spinner}></div>
     </div>
