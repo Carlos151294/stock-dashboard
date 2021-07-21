@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# IPC Stock Market Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Stock Dashboard is a project which seeks to reflect the [IPC](https://www.eleconomista.es/diccionario-de-economia/indice-de-precios-y-cotizaciones-ipc) from México.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Install dependencies:
 
-### `yarn start`
+    npm install
 
-Runs the app in the development mode.\
+Run the app in development mode:
+    
+    npm start
+    
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+(Optional) If you want to launch the test runner in the interactive watch mode:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    npm test
 
-### `yarn build`
+(Optional) If you want to deploy the app using [Github Pages](https://pages.github.com/):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm deploy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Visit [https://carlos151294.github.io/stock-dashboard](https://carlos151294.github.io/stock-dashboard) to see the latest version of the app.
+    
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Stock Dashboard has the following features:
 
-### `yarn eject`
+* **Authentication**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    When you enter the app, you are directed to the *Login Page*. In order to move to the *Home Page* (main section of the app), you can click on the "Login" button and a new window will be opened so you can enter your Google credentials. If you enter valid credentials, you'll be redirected automatically to the *Home Page* of the app.
+    Inside the app, you can see at the top right corner a "Logout" link that allows you to end your session. This will redirect you the the *Login Page*.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    This app makes use of [Firebase Authentication](https://firebase.google.com/docs/auth) which leverages the standards OAuth 2.0.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Data Visualization**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Once you're successfully authenticated, the app automatically loads some information coming from a [mock endpoint](https://run.mocky.io/v3/cc4c350b-1f11-42a0-a1aa-f8593eafeb1e) and displays it using a **Line Chart**. At the top of the chart you can find two icons which give you the chance to click on any of them depending wether you'd like to visualize the data in a **Line Chart** or an **Area Chart**.
 
-## Learn More
+    This app makes use of [Recharts](https://recharts.org/) which is a great tool to integrate charts in React applications.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* **Theming**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    In the *Home Page*, below the "Logout" link, you can find a "Dark Theme" toggle button to change between dark and light themes depending on your preference.
+        
+    This app makes use of [Material UI](https://material-ui.com/) which is a great tool to style and build React applications.
