@@ -19,6 +19,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
     npm test
 
+When running the tests, you may see a warning like "The width(0) and height(0) of chart should be greater than 0...". It's caused by recharts library and this may be fixed for future releases. 
+
 (Optional) If you want to deploy the app using [Github Pages](https://pages.github.com/):
 
     npm deploy
